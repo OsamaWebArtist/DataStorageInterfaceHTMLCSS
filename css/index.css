@@ -1,0 +1,221 @@
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*small*/
+@media (min-width:768px){
+    .container{
+        width: 750px;
+    }
+}
+@media (min-width:992px){
+    .container{
+        width: 970px;
+    }
+}
+@media (min-width:1200px){
+    .container{
+        width: 1170px;
+    }
+}
+
+
+.rang{
+    height: 650px;
+    background-image: url(../bg-desktop.png);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rang .container{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.rang-head{
+    margin: 0 25px;
+    background-color: hsl(228, 56%, 26%);
+    height: 150px;
+    width: 300px;
+    border-radius: 15px;
+    border-top-right-radius: 99px;
+}
+.rang-head img:first-child{
+    transform: scale(0.7);
+    padding: 21px 5px 11px 10px;
+    display: block;
+}
+.rang-head img:nth-of-type(n+2){
+    background-color: hsl(229, 57%, 11%);
+    padding: 10px;
+    height: 37px;
+    width: 38px;
+    border-radius: 5px;
+    margin: 0 8px;
+    transform: translate(23px,9px);
+}
+.rang-head img:nth-of-type(n+2):hover{
+    background-color: white;
+    opacity: 0.7;
+    cursor: pointer;
+}
+.rang-storage {
+    width: 539px;
+    height: 136px;
+    background: hsl(228, 56%, 26%);
+    transform: translate(7px, 6px);
+    padding: 25px;
+    position: relative;
+    border-radius: 5px;
+}
+.rang-storage::before{
+    content: "";
+    border: 36px solid white;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    position: absolute;
+    right: 21px;
+    top: 29px;
+}
+.rang-storage p{
+    color: white;
+    font-family: Raleway;
+    font-weight: 400px;
+}
+
+.rang-storage p > span{
+    font-weight: bold;
+}
+.rang-storage p + p{
+
+    font-weight: bold;
+    position: absolute;
+    right: 21px;
+    top: -57px;
+    color: hsl(229, 57%, 11%);
+    background-color: white;
+    font-size: 50px;
+    padding: 15px;
+    border-radius: 10px;
+
+}
+
+.rang-storage p + p > span{
+    font-weight: lighter;
+    font-size: 10px;
+}
+
+.storage {
+    background: hsl(229, 57%, 11%);
+    width: 493px;
+    height: 15px;
+    margin-top: 25px;
+    border-radius: 25px;
+    position: relative;
+}
+.storage::before{
+    content: "";
+    position: absolute;
+    height: 12px;
+    width: 400px;
+    background-image: linear-gradient(to right,hsl(6, 100%, 80%) , hsl(335, 100%, 65%));
+    top: 1px;
+    border-radius: 10px;
+    animation-iteration-count: 1;
+    animation: storage 2s linear;
+}
+@keyframes storage{
+    0%{
+        width: 0px;
+    }
+    100%{
+        width: 400px;
+    }
+}
+.storage::after{
+    content: "";
+    position: absolute;
+    height: 11px;
+    width: 11px;
+    top: 1.5px;
+    right: 95px;
+    border-radius: 50%;
+    background-color: white;
+    animation-iteration-count: 1;
+    animation: storage-1 2s linear;
+}
+@keyframes storage-1{
+    0%{
+        right: 483px;
+    }
+    100%{
+        right: 95px;
+    }
+}
+.rang-storage div:last-child{
+    display: flex;
+    justify-content: space-between;
+    font-family: raleway;
+    color: white;
+    padding: 5px 0 0 0;
+}
+
+
+
+@media (max-width:768px){
+    .rang{
+        flex-direction: column;
+        background-image: url("../images/bg-mobile.png");
+        width: 768px;
+    }
+    .storage{
+        width: 253px;
+    }
+    .rang-storage{
+        margin-top: 10px;
+        width: 300px;
+        transform: translate(-2px, 6px);
+        height: 176px;
+    }
+    .rang-storage::before{
+        display: none;
+    }
+    .rang-storage p + p{
+    right: 72PX;
+    top: 135px;  
+    }
+    
+    .storage::before{
+        width: 184px;
+        animation-iteration-count: 1;
+        animation: storage 2s linear;
+    }
+    .storage::after{
+        right: 71px;
+        animation-iteration-count: 1;
+        animation: storage-1 2s linear;
+    }
+    @keyframes storage-1{
+        0%{
+            right: 240px;
+        }
+        100%{
+            right: 71px;
+        }
+    }
+    
+    @keyframes storage{
+        0%{
+            width: 0px;
+        }
+        100%{
+            width: 184px;
+        }
+    }
+}
